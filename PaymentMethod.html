@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+    .payment-form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-form">
+    <h2>Payment Form</h2>
+    <form action="/process_payment" method="POST">
+      <label for="name">Name on Card:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="card">Card Number:</label>
+      <input type="text" id="card" name="card" maxlength="16" required>
+
+      <label for="exp">Expiry Date:</label>
+      <input type="month" id="exp" name="exp" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="password" id="cvv" name="cvv" maxlength="3" required>
+
+      <label for="payment">Payment Method:</label>
+      <select id="payment" name="payment">
+        <option value="credit">Credit Card</option>
+        <option value="debit">Debit Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+
+</body>
+</html>
